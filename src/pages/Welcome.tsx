@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export const Welcome = () => (
   <BaseLayout headline="Willkommen">
-    <div>
+    <div className="h-screen">
       <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
         Dein persönlicher
         <br />

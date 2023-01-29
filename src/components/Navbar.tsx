@@ -1,11 +1,11 @@
 import { Disclosure } from '@headlessui/react'
 import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/outline'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { classNames } from '../helper'
 
 export const Navbar = () => {
-  const router = useRouter()
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
 
   return (
     <Disclosure as="nav" className="bg-green-300">
@@ -15,25 +15,25 @@ export const Navbar = () => {
             <div className="flex h-14 justify-between">
               <div className="flex items-center">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link href="/">
+                  <Link to="/">
                     <img
                       className="block h-8 w-auto rounded-full lg:block"
-                      src="/mum.jpg"
+                      src="/src/assets/mum.jpg"
                       alt="profile picture"
                     />
                   </Link>
                 </div>
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                   <Link
-                    href="/reisefinder"
+                    to="/reisefinder"
                     className={classNames(
-                      router.pathname === '/reisefinder'
-                        ? 'border-b border-white text-white hover:border-gray-50'
+                      pathname === '/reisefinder'
+                        ? 'border-b border-gray-700 hover:border-gray-900'
                         : '',
-                      'py-2 text-sm font-medium hover:border-gray-50 hover:text-gray-50',
+                      'py-2 text-sm font-medium text-gray-700 hover:border-b hover:border-gray-900 hover:text-gray-900',
                     )}
                     aria-current={
-                      router.pathname === 'reisefinder' ? 'page' : undefined
+                      pathname === 'reisefinder' ? 'page' : undefined
                     }
                   >
                     Reisefinder
@@ -64,14 +64,12 @@ export const Navbar = () => {
                 as="a"
                 href="/reisefinder"
                 className={classNames(
-                  router.pathname === 'reisefinder'
-                    ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
-                    : 'border-transparent text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800',
-                  'block border-l-4 py-2 pl-3 pr-4 text-base font-medium',
+                  pathname === 'reisefinder'
+                    ? 'border-b border-gray-700 hover:border-gray-900'
+                    : '',
+                  'py-2 text-sm font-medium text-gray-700 hover:border-b hover:border-gray-900 hover:text-gray-900',
                 )}
-                aria-current={
-                  router.pathname === 'reisefinder' ? 'page' : undefined
-                }
+                aria-current={pathname === 'reisefinder' ? 'page' : undefined}
               >
                 Reisefinder
               </Disclosure.Button>
@@ -81,7 +79,7 @@ export const Navbar = () => {
                 <div className="flex-shrink-0">
                   <img
                     className="h-10 w-10 rounded-full"
-                    src="/mum.jpg"
+                    src="/src/assets/mum.jpg"
                     alt=""
                   />
                 </div>

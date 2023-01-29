@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { v4 as uuid } from 'uuid'
 
-export type Destination = 'portugal' | 'madeira' | 'copenhagen' | 'draw'
+export type Destination = 'portugal' | 'madeira' | 'kopenhagen'
 
 export type Answer = {
   id: string
@@ -20,9 +20,11 @@ export type Result = {
   picture: ReactNode
 }
 
+export type ResultOptions = Destination | 'draw'
+
 export type VacationFinderData = {
   questions: Question[]
-  results: Record<Destination, Result>
+  results: Record<ResultOptions, Result>
 }
 
 export const vacationFinderData: VacationFinderData = {
@@ -32,24 +34,30 @@ export const vacationFinderData: VacationFinderData = {
         'Entdecke die Faszination Portugals, wo dich atemberaubende Küsten, eine lebendige Kultur und eine reiche Geschichte erwarten. Erkunde charmante Dörfer, genieße die traditionelle Küche und lasse dich von der landschaftlichen Schönheit Portugals verzaubern.',
       picture: (
         <img
-          src="/lissabon-teaser-picture.jpeg"
+          className="h-56 w-auto rounded-t-lg object-cover"
+          src="/src/assets/lissabon-teaser-picture.jpeg"
           alt="teaser bild für portugal"
         />
       ),
     },
     madeira: {
       teaserText:
-        'Entfliehe auf die wunderschöne Insel Madeira, wo du atemberaubende Landschaften und ein warmes Klima erwarten kannst. Wandere auf rauen Pfaden, entspanne an unberührten Stränden und probieren die lokale Küche. Erleben das Beste von Portugal in diesem tropischen Paradies.',
+        'Entfliehe auf die wunderschöne Insel Madeira, wo du atemberaubende Landschaften und ein warmes Klima erwarten kannst. Wandere auf rauen Pfaden, entspanne an unberührten Stränden und probieren die lokale Küche. Erlebe ein tropischen Paradies.',
       picture: (
-        <img src="/madeira-teaser-picture.jpeg" alt="teaser bild für madeira" />
+        <img
+          className="h-56 w-auto rounded-t-lg object-cover"
+          src="/src/assets/madeira-teaser-picture.jpeg"
+          alt="teaser bild für madeira"
+        />
       ),
     },
-    copenhagen: {
+    kopenhagen: {
       teaserText:
         'Begebe dich auf eine unvergessliche Reise nach Kopenhagen, wo innovatives Design auf Geschichte und Tradition trifft. Trete in die Pedale durch charmante Kanäle, genieße die köstliche, nordische Küche und lasse dich von ikonischen Wahrzeichen inspirieren. Besuche jetzt Dänemarks bezaubernde Hauptstadt.',
       picture: (
         <img
-          src="/copenhagen-teaser-picture.jpeg"
+          className="h-56 w-auto rounded-t-lg object-cover"
+          src="/src/assets/copenhagen-teaser-picture.jpeg"
           alt="teaser bild für copenhagen"
         />
       ),
@@ -57,7 +65,13 @@ export const vacationFinderData: VacationFinderData = {
     draw: {
       teaserText:
         'Leider gab es keinen eindeutigen Gewinner. Starte nochmal neu um dein Traumziel zu finden.',
-      picture: <img src="/draw-teaser-picture.jpeg" alt="unentschieden bild" />,
+      picture: (
+        <img
+          className="h-auto max-w-md rounded-lg shadow-xl"
+          src="/src/assets/draw-teaser-picture.jpeg"
+          alt="unentschieden bild"
+        />
+      ),
     },
   },
   questions: [
@@ -73,7 +87,7 @@ export const vacationFinderData: VacationFinderData = {
         {
           id: uuid(),
           text: 'Mild mit manchmal leichten Regen',
-          destinationPoint: 'copenhagen',
+          destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
@@ -94,32 +108,11 @@ export const vacationFinderData: VacationFinderData = {
         {
           id: uuid(),
           text: 'Kulturelle Erlebnisse (Museen, historische Stätten usw.)',
-          destinationPoint: 'copenhagen',
+          destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
           text: 'Entspannung und Kultur',
-          destinationPoint: 'portugal',
-        },
-      ],
-    },
-    {
-      id: uuid(),
-      text: 'Wie soll das Tempo des Urlaubs sein?',
-      answers: [
-        {
-          id: uuid(),
-          text: 'Aktiv und schnelllebig',
-          destinationPoint: 'madeira',
-        },
-        {
-          id: uuid(),
-          text: 'Mäßig mit einer Mischung aus Aktivitäten und Ruhepausen',
-          destinationPoint: 'copenhagen',
-        },
-        {
-          id: uuid(),
-          text: 'Entspannt und gemächlich',
           destinationPoint: 'portugal',
         },
       ],
@@ -136,7 +129,7 @@ export const vacationFinderData: VacationFinderData = {
         {
           id: uuid(),
           text: 'Knäckebrot und Hasselback-Kartoffeln',
-          destinationPoint: 'copenhagen',
+          destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
@@ -157,7 +150,7 @@ export const vacationFinderData: VacationFinderData = {
         {
           id: uuid(),
           text: 'Boutique Hotel',
-          destinationPoint: 'copenhagen',
+          destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
@@ -178,7 +171,7 @@ export const vacationFinderData: VacationFinderData = {
         {
           id: uuid(),
           text: 'Öffentliche Verkehrsmittel & zu Fuß',
-          destinationPoint: 'copenhagen',
+          destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
@@ -199,7 +192,7 @@ export const vacationFinderData: VacationFinderData = {
         {
           id: uuid(),
           text: 'Alleine oder mit Freunden',
-          destinationPoint: 'copenhagen',
+          destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
@@ -220,7 +213,7 @@ export const vacationFinderData: VacationFinderData = {
         {
           id: uuid(),
           text: 'Unabhängige Erkundungen',
-          destinationPoint: 'copenhagen',
+          destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
@@ -241,7 +234,7 @@ export const vacationFinderData: VacationFinderData = {
         {
           id: uuid(),
           text: 'Live-Musik/kulturelle Veranstaltungen',
-          destinationPoint: 'copenhagen',
+          destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
@@ -262,7 +255,7 @@ export const vacationFinderData: VacationFinderData = {
         {
           id: uuid(),
           text: 'Urbane und städtische Landschaften',
-          destinationPoint: 'copenhagen',
+          destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
@@ -283,7 +276,7 @@ export const vacationFinderData: VacationFinderData = {
         {
           id: uuid(),
           text: '~ 1:30 Stunde',
-          destinationPoint: 'copenhagen',
+          destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),

@@ -5,5 +5,5 @@ type PageProps = {
 }
 
 export const Page = ({ children }: PageProps) => {
-  return <div className="h-screen bg-gray-100 py-10">{children}</div>
+  return <div className="h-full bg-gray-100 py-10">{children}</div>
 }
