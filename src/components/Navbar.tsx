@@ -1,5 +1,9 @@
 import { Disclosure } from '@headlessui/react'
-import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/outline'
+import {
+  XMarkIcon,
+  Bars3Icon,
+  ArrowSmallRightIcon,
+} from '@heroicons/react/24/outline'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { classNames } from '../helper'
 
@@ -59,7 +63,7 @@ export const Navbar = () => {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 pt-2 pb-3">
+            <div className="space-y-1 px-4 pt-2 pb-3">
               <Disclosure.Button
                 as="a"
                 href="/reisefinder"
@@ -71,24 +75,14 @@ export const Navbar = () => {
                 )}
                 aria-current={pathname === 'reisefinder' ? 'page' : undefined}
               >
-                Reisefinder
-              </Disclosure.Button>
-            </div>
-            <div className="border-t border-gray-200 pt-4 pb-3">
-              <div className="flex items-center px-4">
-                <div className="flex-shrink-0">
-                  <img
-                    className="h-10 w-10 rounded-full"
-                    src="/mum.jpg"
-                    alt=""
+                <div className="flex">
+                  Reisefinder starten
+                  <ArrowSmallRightIcon
+                    className="ml-2 -mr-1 h-5 w-5"
+                    aria-hidden="true"
                   />
                 </div>
-                <div className="ml-3">
-                  <div className="text-base font-medium text-gray-800">
-                    Manuela's Geburtstagsquiz
-                  </div>
-                </div>
-              </div>
+              </Disclosure.Button>
             </div>
           </Disclosure.Panel>
         </>

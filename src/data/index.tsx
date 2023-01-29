@@ -67,7 +67,7 @@ export const vacationFinderData: VacationFinderData = {
         'Leider gab es keinen eindeutigen Gewinner. Starte nochmal neu um dein Traumziel zu finden.',
       picture: (
         <img
-          className="h-auto max-w-md rounded-lg shadow-xl"
+          className="h-auto rounded-lg shadow-xl sm:max-w-xs md:max-w-md lg:max-w-md"
           src="/draw-teaser-picture.jpeg"
           alt="unentschieden bild"
         />

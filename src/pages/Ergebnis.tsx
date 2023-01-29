@@ -79,9 +79,9 @@ export const Ergebnis = () => {
               <p className="pt-8 pb-2 text-lg leading-8 text-gray-600">
                 Natürlich gibt es auch noch weitere schöne Ziel:
               </p>
-              <div className="flex space-x-6">
+              <div className="flex-none sm:flex md:flex md:space-x-6 lg:flex">
                 {others.map((looser, index) => (
-                  <div className="max-w-xs rounded-lg bg-green-600 shadow dark:border-gray-700">
+                  <div className="my-4 max-w-xs rounded-lg bg-green-600 shadow dark:border-gray-700">
                     {results[looser as ResultOptions].picture}
                     <div className="p-5">
                       <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-50">
@@ -98,7 +98,7 @@ export const Ergebnis = () => {
                   </div>
                 ))}
               </div>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
+              <p className="mt-4 text-lg leading-8 text-gray-600">
                 Du möchtest es nochmal probieren?
               </p>
               <Link
@@ -119,7 +119,7 @@ export const Ergebnis = () => {
       </div>
       {!isCalculating && isDraw() && (
         <div className="h-screen">
-          <div className="flex">
+          <div className="flex-none sm:flex md:flex lg:flex">
             <div className="flex flex-col">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Unentschieden
@@ -131,7 +131,7 @@ export const Ergebnis = () => {
               </p>
               <Link
                 to="/reisefinder"
-                className="mt-4 w-56 whitespace-nowrap rounded-md bg-green-300 px-3.5 py-1.5 text-base font-semibold leading-7 text-gray-900 shadow-sm hover:bg-green-400 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="my-4 w-56 whitespace-nowrap rounded-md bg-green-300 px-3.5 py-1.5 text-base font-semibold leading-7 text-gray-900 shadow-sm hover:bg-green-400 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 <div className="flex items-center">
                   Reisefinder neu starten
