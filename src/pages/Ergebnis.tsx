@@ -56,7 +56,7 @@ export const Ergebnis = () => {
       </div>
       <div>
         {!isCalculating && !isDraw() && (
-          <div>
+          <div className="h-full">
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Dein persönlicher Favourit
             </h2>
@@ -118,30 +118,32 @@ export const Ergebnis = () => {
         )}
       </div>
       {!isCalculating && isDraw() && (
-        <div className="flex">
-          <div className="flex flex-col">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Unentschieden
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Hier lagen zwei Reiseziele genau gleich auf.
-              <br /> Starte den Reisefinder neu um ein eindeutiges Ergebnis zu
-              erhalten.
-            </p>
-            <Link
-              to="/reisefinder"
-              className="mt-4 w-56 whitespace-nowrap rounded-md bg-green-300 px-3.5 py-1.5 text-base font-semibold leading-7 text-gray-900 shadow-sm hover:bg-green-400 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              <div className="flex items-center">
-                Reisefinder neu starten
-                <ArrowUturnLeftIcon
-                  className="ml-2 -mr-1 h-5 w-5"
-                  aria-hidden="true"
-                />
-              </div>
-            </Link>
+        <div className="h-full">
+          <div className="flex">
+            <div className="flex flex-col">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Unentschieden
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Hier lagen zwei Reiseziele genau gleich auf.
+                <br /> Starte den Reisefinder neu um ein eindeutiges Ergebnis zu
+                erhalten.
+              </p>
+              <Link
+                to="/reisefinder"
+                className="mt-4 w-56 whitespace-nowrap rounded-md bg-green-300 px-3.5 py-1.5 text-base font-semibold leading-7 text-gray-900 shadow-sm hover:bg-green-400 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                <div className="flex items-center">
+                  Reisefinder neu starten
+                  <ArrowUturnLeftIcon
+                    className="ml-2 -mr-1 h-5 w-5"
+                    aria-hidden="true"
+                  />
+                </div>
+              </Link>
+            </div>
+            <div>{results.draw.picture}</div>
           </div>
-          <div>{results.draw.picture}</div>
         </div>
       )}
     </BaseLayout>

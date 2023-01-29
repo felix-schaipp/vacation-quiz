@@ -35,7 +35,7 @@ export const vacationFinderData: VacationFinderData = {
       picture: (
         <img
           className="h-56 w-auto rounded-t-lg object-cover"
-          src="/src/assets/lissabon-teaser-picture.jpeg"
+          src="/lissabon-teaser-picture.jpeg"
           alt="teaser bild für portugal"
         />
       ),
@@ -46,7 +46,7 @@ export const vacationFinderData: VacationFinderData = {
       picture: (
         <img
           className="h-56 w-auto rounded-t-lg object-cover"
-          src="/src/assets/madeira-teaser-picture.jpeg"
+          src="/madeira-teaser-picture.jpeg"
           alt="teaser bild für madeira"
         />
       ),
@@ -57,7 +57,7 @@ export const vacationFinderData: VacationFinderData = {
       picture: (
         <img
           className="h-56 w-auto rounded-t-lg object-cover"
-          src="/src/assets/copenhagen-teaser-picture.jpeg"
+          src="/copenhagen-teaser-picture.jpeg"
           alt="teaser bild für copenhagen"
         />
       ),
@@ -68,7 +68,7 @@ export const vacationFinderData: VacationFinderData = {
       picture: (
         <img
           className="h-auto max-w-md rounded-lg shadow-xl"
-          src="/src/assets/draw-teaser-picture.jpeg"
+          src="/draw-teaser-picture.jpeg"
           alt="unentschieden bild"
         />
       ),

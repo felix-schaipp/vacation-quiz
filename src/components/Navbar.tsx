@@ -18,7 +18,7 @@ export const Navbar = () => {
                   <Link to="/">
                     <img
                       className="block h-8 w-auto rounded-full lg:block"
-                      src="/src/assets/mum.jpg"
+                      src="/mum.jpg"
                       alt="profile picture"
                     />
                   </Link>
@@ -79,7 +79,7 @@ export const Navbar = () => {
                 <div className="flex-shrink-0">
                   <img
                     className="h-10 w-10 rounded-full"
-                    src="/src/assets/mum.jpg"
+                    src="/mum.jpg"
                     alt=""
                   />
                 </div>
