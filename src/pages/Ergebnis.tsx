@@ -118,7 +118,7 @@ export const Ergebnis = () => {
         )}
       </div>
       {!isCalculating && isDraw() && (
-        <div className="h-full">
+        <div className="h-screen">
           <div className="flex">
             <div className="flex flex-col">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
