@@ -20,7 +20,7 @@ export type Result = {
   picture: ReactNode
 }
 
-export type ResultOptions = Destination | 'draw'
+export type ResultOptions = Destination
 
 export type VacationFinderData = {
   questions: Question[]
@@ -59,17 +59,6 @@ export const vacationFinderData: VacationFinderData = {
           className="h-56 w-auto rounded-t-lg object-cover"
           src="/copenhagen-teaser-picture.jpeg"
           alt="teaser bild für copenhagen"
-        />
-      ),
-    },
-    draw: {
-      teaserText:
-        'Leider gab es keinen eindeutigen Gewinner. Starte nochmal neu um dein Traumziel zu finden.',
-      picture: (
-        <img
-          className="h-auto rounded-lg shadow-xl sm:max-w-xs md:max-w-md lg:max-w-md"
-          src="/draw-teaser-picture.jpeg"
-          alt="unentschieden bild"
         />
       ),
     },

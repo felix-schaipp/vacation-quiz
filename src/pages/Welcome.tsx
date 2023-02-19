@@ -15,7 +15,7 @@ export const Welcome = () => (
         Geburtstag.
         <br />
         Da wir wissen, dass du einige wunderschöne Orte auf dieser Welt noch
-        besuchen möchtest, soll dir diese kleine Reisefinder dabei helfen, das
+        besuchen möchtest, soll dir dieser kleine Reisefinder dabei helfen, das
         richtige Ziel auszuwählen.
       </p>
       <div className="mt-8 flex items-center gap-x-6 lg:justify-start">

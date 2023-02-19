@@ -1,19 +1,22 @@
 import './index.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { App } from './App'
+import { LoadingSpinner } from './components'
 import { Suspense } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Welcome, Reisefinder, Ergebnis } from '@/pages'
+import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Suspense fallback={<div>Lade...</div>}>
-        <Routes>
-          <Route path={'/'} element={<Welcome />} />
-          <Route path={'/reisefinder'} element={<Reisefinder />} />
-          <Route path={'/ergbnis'} element={<Ergebnis />} />
-        </Routes>
+      <Suspense
+        fallback={
+          <div className="flex h-screen w-screen items-center justify-center">
+            <LoadingSpinner />
+          </div>
+        }
+      >
+        <App />
       </Suspense>
     </BrowserRouter>
   </React.StrictMode>,

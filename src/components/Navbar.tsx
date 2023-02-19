@@ -4,12 +4,11 @@ import {
   Bars3Icon,
   ArrowSmallRightIcon,
 } from '@heroicons/react/24/outline'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { classNames } from '../helper'
 
 export const Navbar = () => {
   const { pathname } = useLocation()
-  const navigate = useNavigate()
 
   return (
     <Disclosure as="nav" className="bg-green-300">

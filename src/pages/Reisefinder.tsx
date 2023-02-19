@@ -7,21 +7,30 @@ export type ResultCounts = Record<Destination, number>
 
 export const Reisefinder = () => {
   const navigate = useNavigate()
-  const { questions } = vacationFinderData
-  const shuffledQuestions = [...questions].sort(() => 0.5 - Math.random())
+  const { questions: fetchedQuestions } = vacationFinderData
+  const [questions, setQuestions] = useState(fetchedQuestions)
   const [resultCounts, setResultCounts] = useState<ResultCounts>({
     madeira: 0,
     kopenhagen: 0,
     portugal: 0,
   })
   const [currentQuestion, setCurrentQuestion] = useState<Question>(
-    shuffledQuestions[0],
+    fetchedQuestions[0],
   )
   const [questionCount, setQuestionCount] = useState(1)
 
   const handleSelectAnswer = (answer: Answer) => {
+    // filter out current questions
+    const filteredQuestions = questions.reduce((result, question) => {
+      if (question.answers.every((_answer) => _answer.id !== answer.id)) {
+        return [...result, question]
+      }
+      return [...result]
+    }, [] as Question[])
+
     if (questionCount < 10) {
-      setCurrentQuestion(shuffledQuestions[questionCount])
+      setQuestions(filteredQuestions)
+      setCurrentQuestion(filteredQuestions[0])
       setQuestionCount((currentQuestionCount) => currentQuestionCount + 1)
     }
     setResultCounts((currentResultsCount) => ({

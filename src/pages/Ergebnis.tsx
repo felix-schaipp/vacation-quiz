@@ -9,7 +9,7 @@ import { ArrowUturnLeftIcon } from '@heroicons/react/24/outline'
 export const Ergebnis = () => {
   const { results } = vacationFinderData
   const { state } = useLocation()
-  const [isCalculating, setIsNotCalculating] = useState(true)
+  const [isCalculating, setIsCalculating] = useState(true)
 
   const result: ResultCounts = state
 
@@ -17,27 +17,11 @@ export const Ergebnis = () => {
     Object.entries(result).sort(([, a], [, b]) => b - a),
   )
 
-  const isDraw = () => {
-    const madeira = winnerObject['madeira']
-    const copenhagen = winnerObject['kopenhagen']
-    const portugal = winnerObject['portugal']
-
-    if (
-      madeira == copenhagen ||
-      madeira == portugal ||
-      copenhagen == portugal
-    ) {
-      return true
-    }
-
-    return false
-  }
-
   const [winner, ...others] = Object.keys(winnerObject)
 
   useEffect(() => {
     setTimeout(() => {
-      setIsNotCalculating(false)
+      setIsCalculating(false)
     }, 1300)
   }, [])
   return (
@@ -55,7 +39,7 @@ export const Ergebnis = () => {
         )}
       </div>
       <div>
-        {!isCalculating && !isDraw() && (
+        {!isCalculating && (
           <div className="h-full">
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Dein persönlicher Favourit
@@ -81,7 +65,10 @@ export const Ergebnis = () => {
               </p>
               <div className="flex-none sm:flex md:flex md:space-x-6 lg:flex">
                 {others.map((looser, index) => (
-                  <div className="my-4 max-w-xs rounded-lg bg-green-600 shadow dark:border-gray-700">
+                  <div
+                    key={`${looser}-${index}`}
+                    className="my-4 max-w-xs rounded-lg bg-green-600 shadow dark:border-gray-700"
+                  >
                     {results[looser as ResultOptions].picture}
                     <div className="p-5">
                       <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-50">
@@ -117,35 +104,6 @@ export const Ergebnis = () => {
           </div>
         )}
       </div>
-      {!isCalculating && isDraw() && (
-        <div className="h-screen">
-          <div className="flex-none sm:flex md:flex lg:flex">
-            <div className="flex flex-col">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Unentschieden
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Hier lagen zwei Reiseziele genau gleich auf.
-                <br /> Starte den Reisefinder neu um ein eindeutiges Ergebnis zu
-                erhalten.
-              </p>
-              <Link
-                to="/reisefinder"
-                className="my-4 w-56 whitespace-nowrap rounded-md bg-green-300 px-3.5 py-1.5 text-base font-semibold leading-7 text-gray-900 shadow-sm hover:bg-green-400 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                <div className="flex items-center">
-                  Reisefinder neu starten
-                  <ArrowUturnLeftIcon
-                    className="ml-2 -mr-1 h-5 w-5"
-                    aria-hidden="true"
-                  />
-                </div>
-              </Link>
-            </div>
-            <div>{results.draw.picture}</div>
-          </div>
-        </div>
-      )}
     </BaseLayout>
   )
 }
