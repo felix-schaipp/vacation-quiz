@@ -66,7 +66,7 @@ export const vacationFinderData: VacationFinderData = {
   questions: [
     {
       id: uuid(),
-      text: 'Was ist deine bevorzugte Klimazone?',
+      text: 'Was ist dein bevorzugtes Wetter?',
       answers: [
         {
           id: uuid(),
@@ -75,7 +75,7 @@ export const vacationFinderData: VacationFinderData = {
         },
         {
           id: uuid(),
-          text: 'Mild mit manchmal leichten Regen',
+          text: 'Mild mit gelegentlich leichtem Regen',
           destinationPoint: 'kopenhagen',
         },
         {
@@ -108,49 +108,49 @@ export const vacationFinderData: VacationFinderData = {
     },
     {
       id: uuid(),
-      text: 'Was ist deine bevorzugte Küche?',
+      text: 'Bei welchem Gericht läuft dir das Wasser im Mund zusammen?',
       answers: [
         {
           id: uuid(),
-          text: 'Fisch und Meeresfrüchte',
+          text: 'Fangfrischer Fisch und Meeresfrüchte',
           destinationPoint: 'madeira',
         },
         {
           id: uuid(),
-          text: 'Knäckebrot und Hasselback-Kartoffeln',
+          text: 'Frikadeller und als Nachspeise Wienerbrød',
           destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
-          text: 'Tapas und Pasteis de Nata als Nachspeise',
+          text: 'Tapas und als Nachspeise Pasteis de Nata',
           destinationPoint: 'portugal',
         },
       ],
     },
     {
       id: uuid(),
-      text: 'Welche Art von Unterkunft bevorzugst du?',
+      text: 'Welche Reisezeit bevorzugst du?',
       answers: [
         {
           id: uuid(),
-          text: 'Resort',
+          text: 'September bis Mai',
           destinationPoint: 'madeira',
         },
         {
           id: uuid(),
-          text: 'Boutique Hotel',
+          text: 'Juni bis August',
           destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
-          text: "AirBnB's",
+          text: 'April bis Oktober',
           destinationPoint: 'portugal',
         },
       ],
     },
     {
       id: uuid(),
-      text: 'Welche Art von Transportmittel bevorzugst du?',
+      text: 'Welche Art von Transportmittel bevorzugst du vor Ort?',
       answers: [
         {
           id: uuid(),
@@ -164,7 +164,7 @@ export const vacationFinderData: VacationFinderData = {
         },
         {
           id: uuid(),
-          text: 'Fahrrad, öffentliche Verkehrsmittel oder zu Fuß',
+          text: 'Mietwagen, öffentliche Verkehrsmittel oder zu Fuß',
           destinationPoint: 'portugal',
         },
       ],
@@ -180,33 +180,33 @@ export const vacationFinderData: VacationFinderData = {
         },
         {
           id: uuid(),
-          text: 'Alleine oder mit Freunden',
+          text: 'Alleine oder mit FreundInnen',
           destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
-          text: 'Mit Familie oder Freunden',
+          text: 'Mit Familie oder FreundInnen',
           destinationPoint: 'portugal',
         },
       ],
     },
     {
       id: uuid(),
-      text: 'Wie erkundest du gerne neue Orte?',
+      text: 'Wie lange soll deine Reise in etwas dauern?',
       answers: [
         {
           id: uuid(),
-          text: 'Geführte Touren',
+          text: '12 Tage',
           destinationPoint: 'madeira',
         },
         {
           id: uuid(),
-          text: 'Unabhängige Erkundungen',
+          text: 'verlängertes Wochenende',
           destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
-          text: 'Eine Mischung aus beiden',
+          text: '~ 3 Wochen',
           destinationPoint: 'portugal',
         },
       ],
@@ -217,17 +217,17 @@ export const vacationFinderData: VacationFinderData = {
       answers: [
         {
           id: uuid(),
-          text: 'Hotelbar und Resortveranstaltungen',
+          text: 'Hotelbar, Resortveranstaltungen und Spaziergänge',
           destinationPoint: 'madeira',
         },
         {
           id: uuid(),
-          text: 'Live-Musik/kulturelle Veranstaltungen',
+          text: 'Kulturelle Veranstaltungen und Nachtleben',
           destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
-          text: 'Kulturelle Veranstaltungen und Nachtleben',
+          text: 'Livemusik und Nachtausflüge',
           destinationPoint: 'portugal',
         },
       ],
@@ -238,17 +238,17 @@ export const vacationFinderData: VacationFinderData = {
       answers: [
         {
           id: uuid(),
-          text: 'Küsten- und Strandlandschaften',
+          text: 'Küsten- und Vulkanlandschaft',
           destinationPoint: 'madeira',
         },
         {
           id: uuid(),
-          text: 'Urbane und städtische Landschaften',
+          text: 'Urbane Räume',
           destinationPoint: 'kopenhagen',
         },
         {
           id: uuid(),
-          text: 'Lokale oder urbane Landschaften',
+          text: 'Mischung aus ländlichen Gegenden, urbanen Räumen und Küsten',
           destinationPoint: 'portugal',
         },
       ],
