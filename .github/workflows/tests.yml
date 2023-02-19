@@ -1,0 +1,21 @@
+name: "Tests"
+
+on:
+  push:
+  workflow_dispatch: # allows us to manually trigger tests
+
+jobs:
+  tests:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          cache: "yarn"
+          cache-dependency-path: "**/yarn.lock"
+      - name: Install dependencies
+        run: yarn install
+      - name: Run test suite
+        run: yarn run test
